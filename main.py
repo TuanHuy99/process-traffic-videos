@@ -29,7 +29,6 @@ def get_video_files(directory):
                 video_files.append(filename)
     return video_files
 
-# all_sence = os.listdir('/media/thienlv/499e29ef-a7f9-47ef-972e-8ed5f45547e2/code/create_data_9class_SG/Val_dataset/videos/Nga_4')
 video_folder_path = ''
 save_preproccess_data_folder = ''
 
@@ -57,7 +56,7 @@ for sence in all_sence:
     os.mkdir(label_path)
     create_classes_file(label_path)
 
-    model = YOLO("yolov8x.pt")
+    model = YOLO("yolov8l.pt")
     # accepts all formats - image/dir/Path/URL/video/PIL/ndarray. 0 for webcam
 
     for video in videos:
@@ -119,9 +118,9 @@ for sence in all_sence:
                         # bicycle
                         elif cls == 1:
                             continue
-                        elif cls = 5:
-                            cls = continue
-                            cls_in_img.append(cls)
+                        elif cls == 5:
+                            continue
+                        cls_in_img.append(cls)
                         detection.append([cls, x_cen, y_cen, box_w, box_h])
 
                 if len(cls_in_img):
